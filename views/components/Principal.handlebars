@@ -1,0 +1,23 @@
+{{#each productos}}
+{{> Producto nombreProducto=this}}
+{{/each}}
+
+
+<script>
+    let productosSeleccionados = new Set();
+
+    const agregarCarro = (id) => {
+        console.log(id);
+        productosSeleccionados.add(id)
+    }
+
+    const carro = document.querySelector('#carroIcono')
+    carro.addEventListener('click', () => {
+        console.log(productosSeleccionados)
+        const modal = document.querySelector('.modal-body')
+        modal.innerHTML = '';
+        productosSeleccionados.forEach(producto => {
+            modal.innerHTML += `<img src="/assets/${producto}.png" alt="${producto}" width="50" height="50">`
+        });
+    });
+</script>
