@@ -7,7 +7,7 @@ const productosNombres = ['banana', 'cebollas', 'lechuga', 'papas', 'pimenton', 
 
 app.set('view engine', 'handlebars');
 
-app.use('/', express.static(__dirname + '/assets'))
+app.use('/assets', express.static(__dirname + '/assets'))
 app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist/css'))
 app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist'))
 app.use('/bootstrapJS', express.static(__dirname + '/node_modules/bootstrap/dist/js/'))
